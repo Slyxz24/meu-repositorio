@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo 3</title>
+    <style>
+        body {
+            background-color: rgb(131, 255, 131);
+        }
+    </style>
+</head>
+<body>
+    <!--placar  de um jogo-->
+    <p> Contador: <span id="contador">0</span></p>
+
+    <button id="remover">Remover</button>
+    <button id="adicionar">Adicionar</button>
+
+    <script>
+        //1ª etapa - selecionar os elementos
+        const contador = document.querySelector("#contador")
+        const botaoRemover = document.querySelector("#remover")
+        const botaoAdicionar = document.querySelector("#adicionar")
+        
+        //2ª etapa - Definir funções
+        let quantidade = 0
+
+        function adicionar(){
+            quantidade++
+            contador.textContent = quantidade
+        }
+        function remover (){
+            if (quantidade>=1){
+            quantidade--
+            contador.textContent = quantidade
+        }
+    }
+
+        //3ª etapa - conectar as funções no evento do clique
+        botaoAdicionar.addEventListener ("click", adicionar)
+        botaoRemover.addEventListener ("click", remover)
+    </script>
+</body>

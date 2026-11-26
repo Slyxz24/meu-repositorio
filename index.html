@@ -15,7 +15,17 @@
 <body>
     <h1> hello world</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, iste!</p>
+    <!-- exebir uma menssagem ao clicar no botão-->
+    <button id="btn">Clique aqui..</button>
 
+    <script>
+        const btn = document.querySelector("#btn")
+        function exebirmenssagem() {
+            alert("Hello world")
+        }
+
+        btn.addEventListener("dblclick", exebirmenssagem)
+    </script>
 </body>
 
 </html>

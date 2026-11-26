@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres</title>
+    <style>
+        body {
+            background-color: rgb(255, 213, 128);}
+    </style>
+</head>
+
+<body>
+    <h1>Contador de Letras</h1>
+    <p>Digite uma frase abaixo para saber quantas letras foram usadas:</p>
+
+    <input type="text" id="frase" placeholder="Digite sua frase..." />
+    <button id="botao">Contar letras</button>
+    <p id="resultado"></p>
+
+    <script>
+        // 1ª etapa - selecionar os elementos
+        const inputFrase = document.querySelector("#frase")
+        const botao = document.querySelector("#botao")
+        const resultado = document.querySelector("#resultado")
+
+        // 2ª etapa - definir a função de contar letras
+        function contarLetras() {
+            const frase = inputFrase.value
+
+            // corresponde a letras (inclui acentos do português)
+            const letras = frase.match(/[a-zA-ZÀ-ÿ]/g)
+
+            let quantidade = 0
+            if (letras) {
+                quantidade = letras.length
+            }
+
+            resultado.textContent = `Foram usadas ${quantidade} letra(s) na frase.`
+        }
+
+        // 3ª etapa - conectar a função ao clique do botão
+        botao.addEventListener("click", contarLetras)
+    </script>
+
+</body>
+
+</html>
